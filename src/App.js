@@ -7,9 +7,11 @@ import Table from "./components/List";
 
 
 function App() {
+    console.log("123")
   return (
     <div className="jumbotron d-flex align-items-center min-vh-100">
-      <Table/>
+      <Counter1 label={"test"} score={0}/>
+      <Counter1 label={"test2"} score={0}/>
 
     </div>
   );

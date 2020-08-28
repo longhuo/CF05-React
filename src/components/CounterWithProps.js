@@ -16,6 +16,7 @@ export default class Counter extends React.Component {
     }
 
     render() {
+        console.log("render" + this.props.label);
         return (
             <div>
                 <h1>{this.props.label}</h1>

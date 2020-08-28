@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Counter extends React.Component {
+export default class Counter extends React.PureComponent{
     constructor(props) {
         super(props);
         console.log(props);
@@ -11,6 +11,7 @@ export default class Counter extends React.Component {
     }
 
     render() {
+        console.log("render " + this.props.label)
         return (
             <div className={"card"}>
                 <div className={"card-body"}>
