@@ -27,6 +27,7 @@ class Jsx extends Component {
                 </div>
                 <hr/>
                 <div>
+                    {/*why it can display array*/}
                     {this.state.partyMember}
                 </div>
             </div>
