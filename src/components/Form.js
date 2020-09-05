@@ -1,14 +1,13 @@
 import React from 'react';
 
-export default class CPUForm extends React.Component {
+export default class Form extends React.Component {
     constructor(props) {
         console.log('constructor')
         super(props);
         this.state = {
             status: "",
-            core: "",
-            speed: "",
-            price: 0
+            price: 0,
+            label: ""
         }
     }
 
@@ -16,7 +15,9 @@ export default class CPUForm extends React.Component {
         fetch("http://localhost:8080/v1/cpus/2", {
             method: "GET",
         }).then(response => response.json()).then(response => {
-            console.log(response);
+            this.setState({
+                ...response.result
+            })
         })
     }
 
@@ -55,7 +56,7 @@ export default class CPUForm extends React.Component {
                                 </div>
                                 <div className={"form-group"}>
                                     <label className="form-label">Status</label>
-                                    <select className="form-control" value={this.state.status} name="core" onChange={this.handleInputChange}>
+                                    <select className="form-control" value={this.state.status} name="status" onChange={this.handleInputChange}>
                                         <option value="Active">Active</option>
                                         <option value="Inactive">Inactive</option>
                                     </select>

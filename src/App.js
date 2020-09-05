@@ -13,7 +13,7 @@ function App() {
     console.log("123")
   return (
     <div className="jumbotron d-flex align-items-center min-vh-100">
-      <Form/>
+      <Score/>
 
     </div>
   );
