@@ -22,7 +22,7 @@ import {
 
 } from "react-router-dom";
 
-/*
+
 function App() {
     //
     console.log("123")
@@ -34,9 +34,9 @@ function App() {
 }
 
 export default App;
-*/
 
-function App(){
+
+function App2(){
     return (
         <Router>
             <div className={"flex-column"}>
@@ -60,4 +60,5 @@ function App(){
         </Router>
     )
 }
-export default App;
+/*
+export default App2;*/

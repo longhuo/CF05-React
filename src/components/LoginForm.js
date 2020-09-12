@@ -38,6 +38,14 @@ export default class Form extends React.Component {
                     }
                 }).then(response => response.json()).then(response => {
                     if(response.result){
+                        localStorage.setItem("token", response.result);
+
+                        fetch("http://localhost:8080/v1/users/me",{
+                            headers: {
+                                "Authorization": localStorage.getItem('token')
+                            }
+                        }).then(response => response.json()).then(response => console.log(response))
+
                         this.setState({
                             serverFeedback: response.result.message,
                             submitting: false,
