@@ -1,5 +1,6 @@
 import React from 'react';
 import {isEmpty} from "../helper";
+import Input from "./Input";
 
 export default class Form extends React.Component {
     constructor(props) {
@@ -89,6 +90,7 @@ export default class Form extends React.Component {
     }
 
     handleInputChange = (e) => {
+        console.log("changed")
         this.setState({
             formValue: {
                 ...this.state.formValue,
@@ -109,20 +111,20 @@ export default class Form extends React.Component {
                         <div className={"col-lg-12"}>
                             <form onSubmit={this.handleFormSubmit}>
                                 {this.state.serverFeedback && <h3 className={"text-danger"}>{this.state.serverFeedback}</h3>}
-                                <div className={"form-group"}>
-                                    <label className="form-label">Label</label>
-                                    <input type="text" name="label" value={label} className={`form-control ${errors?.label ? "is-invalid" : "is-valid"}`} onInput={this.handleInputChange}/>
-                                    {errors.label && <div className="invalid-feedback">
-                                        {errors.label}
-                                    </div>}
-                                </div>
-                                <div className={"form-group"}>
-                                    <label className="form-label">Price</label>
-                                    <input type="text" name="price" value={price} className={`form-control ${errors?.price ? "is-invalid" : "is-valid"}`} onChange={this.handleInputChange}/>
-                                    {errors.price && <div className="invalid-feedback">
-                                        {errors.price}
-                                    </div>}
-                                </div>
+                                <Input
+                                    name={"label"}
+                                    label={"Label"}
+                                    errors={errors}
+                                    value={label}
+                                    onChange={this.handleInputChange}
+                                />
+                                <Input
+                                    name={"price"}
+                                    label={"Price"}
+                                    errors={errors}
+                                    value={price}
+                                    onChange={this.handleInputChange}
+                                />
                                 <button type={"submit"} disabled={this.state.submitting} className="btn btn-primary">Update</button>
                             </form>
                         </div>
