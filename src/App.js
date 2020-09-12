@@ -8,7 +8,8 @@ import Theme from "./components/Theme";
 import Images from "./components/Image";
 //import Form from "./components/Form";
 //import Form from "./components/FormWithValidation";
-import Form from "./components/FormWithSharedComponent"
+//import Form from "./components/FormWithSharedComponent"
+import Form from "./components/LoginForm";
 import Jsx from "./components/JSX";
 function App() {
     //
